@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devine le Nombre</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Devine le Nombre 🔢</h1>
+        <p>J'ai choisi un nombre entre 1 et 100. À toi de deviner !</p>
+        <input type="number" id="guessInput" min="1" max="100" placeholder="Entrez un nombre">
+        <button id="checkButton">Vérifier</button>
+        <p id="message"></p>
+        <p>Nombre d'essais : <span id="attempts">0</span></p>
+        
+        <h3>Historique des essais :</h3>
+        <ul id="historyList"></ul>
+        
+        <button id="resetButton">Rejouer</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
