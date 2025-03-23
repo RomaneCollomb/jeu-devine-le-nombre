@@ -27,6 +27,7 @@ checkButton.addEventListener("click", () => {
         message.style.color = "green";
         checkButton.disabled = true;
         resetButton.style.display = "block";
+        resultText = "Trouvé 🎉"; // Ajout du message de victoire dans l'historique
     } else if (guess < nombreSecret) {
         resultText = "Trop bas ⬆️";
         message.textContent = resultText;
@@ -40,7 +41,7 @@ checkButton.addEventListener("click", () => {
     // Ajouter l'essai à l'historique
     const listItem = document.createElement("li");
     listItem.textContent = `${guess} → ${resultText}`;
-    listItem.classList.add(guess < nombreSecret ? "trop-bas" : "trop-haut");
+    listItem.classList.add(guess === nombreSecret ? "trouvé" : guess < nombreSecret ? "trop-bas" : "trop-haut");
     historyList.appendChild(listItem);
 
     guessInput.value = "";
@@ -57,3 +58,4 @@ resetButton.addEventListener("click", () => {
     checkButton.disabled = false;
     resetButton.style.display = "none";
 });
+
